@@ -1,0 +1,45 @@
+{
+  "name": "remark-numbered-headings",
+  "version": "0.1.0",
+  "description": "remark plugin to number headings",
+  "author": "Kengo Nakatsuka <kengo.nakatsuka@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/nak2k/remark-numbered-headings/issues"
+  },
+  "homepage": "https://github.com/nak2k/remark-numbered-headings",
+  "keywords": [],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nak2k/remark-numbered-headings.git"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "dependencies": {
+    "@types/mdast": "^4.0.3",
+    "mdast-util-to-string": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "is-hidden": "^2.0.1",
+    "remark": "^15.0.1",
+    "type-coverage": "^2.27.1",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "build": "tsc --build --clean && tsc --build && type-coverage",
+    "prepack": "npm run build",
+    "test": "npm run build && npm run test-api",
+    "test-api": "node --conditions development test/index.js"
+  },
+  "typeCoverage": {
+    "atLeast": 100,
+    "detail": true,
+    "ignoreCatch": true,
+    "strict": true
+  }
+}
